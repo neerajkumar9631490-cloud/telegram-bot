@@ -7,8 +7,6 @@ from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, fil
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-print("TOKEN:", TELEGRAM_BOT_TOKEN)
-print("API:", OPENROUTER_API_KEY)
 # ====== SAFETY CHECK ======
 if not TELEGRAM_BOT_TOKEN or not OPENROUTER_API_KEY:
     raise ValueError("API keys missing! Check Railway variables.")
