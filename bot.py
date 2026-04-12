@@ -5,7 +5,7 @@ from telegram.ext import ApplicationBuilder, MessageHandler, filters, ContextTyp
 
 # ====== YOUR API KEYS ======
 TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")"
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
 # ====== OpenRouter Function ======
 def ask_ai(prompt):
