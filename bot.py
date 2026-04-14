@@ -80,10 +80,23 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = update.message.from_user.id
     user_message = update.message.text
 
+    # 👇 Send waiting message
+    wait_msg = await update.message.reply_text("Ngx is thinking...")
+
+    # Get AI reply
     reply = ask_ai(user_id, user_message)
 
-    await update.message.reply_text(reply)
+    # 👇 Delete waiting message
+    try:
+        await context.bot.delete_message(
+            chat_id=update.effective_chat.id,
+            message_id=wait_msg.message_id
+        )
+    except:
+        pass  # ignore if can't delete
 
+    # 👇 Send final reply
+    await update.message.reply_text(reply)
 # ====== MAIN FUNCTION ======
 def main():
     app = ApplicationBuilder().token(TELEGRAM_BOT_TOKEN).build()
