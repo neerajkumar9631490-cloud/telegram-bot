@@ -42,7 +42,7 @@ def ask_ai(user_id, prompt):
     user_history[user_id] = user_history[user_id][-10:]
 
     data = {
-        "model": "openai/gpt-3.5-turbo",
+        "model": "openai/gpt-oss-120b",
         "messages": user_history[user_id]
     }
 
