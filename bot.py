@@ -33,7 +33,7 @@ def ask_ai(user_id, prompt):
         user_history[user_id] = [
             {
                 "role": "system",
-                "content": "You are NGX AI. Reply in clean Telegram Markdown with bullet points."
+                "content": "You are NGX AI. Design to answer user questions."
             }
         ]
 
@@ -45,7 +45,7 @@ def ask_ai(user_id, prompt):
     user_history[user_id] = user_history[user_id][-12:]
 
     data = {
-        "model": "openai/gpt-oss-120b:free",
+        "model": "openai/gpt-3.5-turbo",
         "messages": user_history[user_id]
     }
 
